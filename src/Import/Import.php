@@ -99,6 +99,13 @@ class Import
         return $this;
     }
 
+    /**
+     * Check if its a configurable product
+     * if yes, return the title of the product before first -
+     *
+     * @param string $product_title
+     * @return string
+     */
     public function check_if_configurable_product($product_title): string
     {
         $title_arr = explode('-', $product_title);
@@ -112,6 +119,12 @@ class Import
         }
     }
 
+    /**
+     * crete configurable product.
+     *
+     * @param array $configrable_products_array
+     * @return void
+     */
     public function create_configurable_product($configrable_products_array): void
     {
         foreach ($configrable_products_array as $c_p_sku => $arr_simple_products) {
@@ -148,6 +161,12 @@ class Import
         }
     }
 
+    /**
+     * arrange product attributes in propr array format.
+     *
+     * @param string $product_attributes
+     * @return array
+     */
     public function extract_attributes($product_attributes): array
     {
         $attributes = [];
